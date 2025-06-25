@@ -1,0 +1,16 @@
+# Dataset configuration for YOLOv8 training
+
+# Dataset root directory (Use absolute path to avoid issues with default dataset dirs)
+path: d:/vision/myTrainCode/dataset # Updated to absolute path
+
+# Train/val/test sets (relative to 'path')
+train: train/images
+val: test/images   # Using the test set for validation as we only have train/test split
+test: test/images  # Optional: specify test set if needed for evaluation after training
+
+# Classes dictionary
+names:
+  0: recyclable waste
+  1: hazardous waste
+  2: kitchen waste
+  3: other waste
