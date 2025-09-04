@@ -1,7 +1,7 @@
-# yolov8(GPU) + cuda11.8 
+# yolov8(GPU) + cuda11.8 + python3.9
 
 ## 环境搭建
-### - 安装CUDA11.8支持的pytorch版本 
+### - 安装CUDA11.8支持的pytorch版本 (不要通过requirements.txt安装，否则为cpu版本)
 ``` bash
 pip install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/cu118
 ```
@@ -22,6 +22,17 @@ ValueError: Unable to find resource t64.exe in package pip._vendor.distlib
     ```
     D:\your env path\your env name\Lib\site-packages\pip\_vendor\distlib
     ```
+- 网络问题安装失败
+     </br>
+    1. 离线安装包参考
+    ```
+    链接: https://pan.baidu.com/s/1KY-BjGf7pKIzWl46dXS4gw?pwd=dasb 提取码: dasb 
+    ```
+    2. 安装
+    ```
+    pip install xxx.whl
+    ```
+
 ### 安装yolov8
 ```
 pip install ultralytics
@@ -35,7 +46,6 @@ pip install ultralytics==8.2.21  # 指定版本避免自动升级到 v11:cite[5]
 ``` shell
 yolo export model=best.pt format=onnx
 ```
-
 
 
 ## 文件结构
@@ -63,4 +73,13 @@ myTrainCode/
 └── runs/                        # 训练结果保存目录
     ├── detect/                  # 检测任务结果
     └── train/                   # 训练任务结果
+```
+
+
+## 工具软件
+
+- ### LabelImg
+```
+通过网盘分享的文件：windows_v1.8.1.zip
+链接: https://pan.baidu.com/s/1Kch-U_LZezeYX5OQePqVag 提取码: dasb 
 ```
