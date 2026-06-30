@@ -26,6 +26,9 @@ ValueError: Unable to find resource t64.exe in package pip._vendor.distlib
      </br>
     1. 离线安装包参考
     ```
+    https://download.pytorch.org/whl/torch_stable.html
+    ```
+    ```
     链接: https://pan.baidu.com/s/1KY-BjGf7pKIzWl46dXS4gw?pwd=dasb 提取码: dasb 
     ```
     2. 安装
