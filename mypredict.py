@@ -1,5 +1,6 @@
 from ultralytics import YOLO
 
+
 def get_classify_id(result_list, class_name: str):
     if not result_list:
         print("错误：预测结果列表为空。")
@@ -19,11 +20,14 @@ def get_classify_id(result_list, class_name: str):
     return None
 
 
-def main():        
-    model = YOLO(model="best.pt", task="detect")
-    result = model.predict(source="yoloDetect.jpg", save=True, conf=0.2)
+def main():
+    model = YOLO(model="D:\\yolo\\myTrainCode\\advacedbest.pt", task="detect")
+    result = model.predict(
+        source="D:\\yolo\\myTrainCode\\3.jpg", save=True, conf=0.4
+    )
     # class_id = get_classify_id(result, "other waste")
     # print(class_id)
+
 
 if __name__ == "__main__":
     main()
