@@ -1,55 +1,76 @@
 # yolov8(GPU) + cuda11.8 + python3.9
 
 ## 环境搭建
+
 ### - 安装CUDA11.8支持的pytorch版本 (不要通过requirements.txt安装，否则为cpu版本)
-``` bash
+
+```bash
 pip install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/cu118
 ```
+
 - 如果在安装依赖时，提示需要t64.exe的问题，报错如下
+
 ```
 ValueError: Unable to find resource t64.exe in package pip._vendor.distlib
 ```
+
 - 解决方法：
-    1. 删除损坏的 distlib 包
-    ```
-    rm -rf D:\your env path\your env name\Lib\site-packages\pip\_vendor\distlib
-    ``` 
-    2. 重新下载distlib 包 (使用阿里源)
-    ```
-    pip download distlib pip setuptools wheel -d . -i https://mirrors.aliyun.com/pypi/simple/    
-    ```
-    解压后手动复制```t64.exe```到
-    ```
-    D:\your env path\your env name\Lib\site-packages\pip\_vendor\distlib
-    ```
+
+  1. 删除损坏的 distlib 包
+
+  ```Shell
+  rm -rf D:\your env path\your env name\Lib\site-packages\pip\_vendor\distlib
+  ```
+
+  2. 重新下载distlib 包 (使用阿里源)
+
+  ```Shell
+  pip download distlib pip setuptools wheel -d . -i https://mirrors.aliyun.com/pypi/simple/
+  ```
+
+  解压后手动复制``t64.exe``到
+  ```
+  D:\your env path\your env name\Lib\site-packages\pip\_vendor\distlib
+  ```
 - 网络问题安装失败
-     </br>
-    1. 离线安装包参考
-    ```
-    https://download.pytorch.org/whl/torch_stable.html
-    ```
-    ```
-    链接: https://pan.baidu.com/s/1KY-BjGf7pKIzWl46dXS4gw?pwd=dasb 提取码: dasb 
-    ```
-    2. 安装
-    ```
-    pip install xxx.whl
-    ```
+
+  1. 离线安装包参考
+
+  ```
+  https://download.pytorch.org/whl/torch_stable.html
+  ```
+
+  ```
+  链接: https://pan.baidu.com/s/1KY-BjGf7pKIzWl46dXS4gw?pwd=dasb 提取码: dasb
+  ```
+
+  2. 安装
+
+  ```Shell
+  pip install xxx.whl
+  ```
 
 ### 安装yolov8
-```
+
+```Shell
 pip install ultralytics
 pip install ultralytics==8.2.21  # 指定版本避免自动升级到 v11:cite[5]:cite[8]
 ```
+yolov8的最后一个版本
+```
+https://github.com/ultralytics/ultralytics/tree/v8.2.103
+```
+
 ### 验证安装
+
 - pytorchAndYolo.py 验证yolov8和pytorch安装
 - pytorchTestGPU.py 验证GPU是否可用
 
 ### 导出pt文件为onnx文件
-``` shell
+
+```shell
 yolo export model=best.pt format=onnx
 ```
-
 
 ## 文件结构
 
@@ -78,10 +99,10 @@ myTrainCode/
     └── train/                   # 训练任务结果
 ```
 
-
 ## 工具软件
 
 - ### LabelImg
+
 ```
 通过网盘分享的文件：windows_v1.8.1.zip
 链接: https://pan.baidu.com/s/1Kch-U_LZezeYX5OQePqVag 提取码: dasb 
